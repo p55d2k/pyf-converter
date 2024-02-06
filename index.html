@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyF Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+  </head>
+  <body class="items-center flex flex-col">
+    <div class="container px-2 sm:px-4 md:px-auto flex flex-col flex-1">
+      <h1 class="text-4xl text-center mt-8">PyF Converter</h1>
+      <p class="text-center mt-3">
+        Enter your text below to convert it to PyF
+      </p>
+      <p class="mt-5">Put your code here:</p>
+      <textarea
+        name="unconverted code"
+        id="unconverted"
+        cols="30"
+        rows="10"
+        class="w-full mt-5 border-2 border-gray-300 p-2"
+      ></textarea>
+      <button class="bg-blue-500 text-white px-4 py-2 mt-5" onclick="convert()">Convert</button>
+      <p class="mt-5">Converted code:</p>
+      <textarea
+        name="converted code"
+        id="converted"
+        cols="30"
+        rows="10"
+        readonly
+        class="w-full mt-5 border-2 border-gray-300 p-2"
+      ></textarea>
+      <button class="bg-green-500 text-white px-4 py-2 mt-5" id="c" onclick="copy()">Copy</button>
+    </div>
+    <div class="mt-4 flex items-center justify-center">
+      <a href="https://www.github.com/p55d2k/pyf-converter" target="_blank">
+        <img width="96" height="96" src="https://img.icons8.com/material-outlined/github" alt="github"/>
+      </a>
+      <h3 class="text-xl">Created by p55d2k</h3>
+    </div>
+  </body>
+</html>

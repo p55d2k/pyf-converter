@@ -27,7 +27,24 @@ function num_to_f(num) {
   return result.slice(0, -1);
 }
 
-function convert() {
+function f_to_num(str) {
+  // Split the string into numbers and operators, keeping operators as individual elements
+  const parts = str.split(/([+-])/);
+
+  // Initialize the sum and handle potential leading plus or minus signs
+  let sum = parts[0] === "-" ? -Number(parts[1]) : Number(parts[0]);
+
+  // Iterate through the remaining parts, adding or subtracting numbers as needed
+  for (let i = 1; i < parts.length; i += 2) {
+    const operator = parts[i];
+    const num = Number(parts[i + 1]);
+    sum = operator === "+" ? sum + num : sum - num;
+  }
+
+  return sum;
+}
+
+function encrypt() {
   let unconverted = document.getElementById("unconverted").value;
   let unconverted_list = unconverted.split("");
   let converted = "";
@@ -39,6 +56,31 @@ function convert() {
   converted = converted.slice(0, -1);
 
   document.getElementById("converted").value = "exec(" + converted + ")";
+}
+
+// exec(chr(11+11+11+11+11+11+11+11+11+11+1+1+1+1+1+1+1+1+1+1)+chr(11+11+1+1+1+1+1+1+1+1+1+1)+chr(11+11+11+11+11+1+1+1+1+1+1)+chr(11+11+1+1+1+1+1+1+1+1+1+1)+chr(11+11+11+1+1+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+1+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+1+1+1+1+1+1)+chr(11+11+11+1+1+1+1+1+1)+chr(1+1+1+1+1+1+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+11+1+1)+chr(11+11+11+11+11+11+11+11+11+11+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+1+1+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+11)+chr(11+11+11+11+11+11+11+11+11+11+1+1+1+1+1+1)+chr(11+11+11+1+1+1+1+1+1+1)+chr(11+11+11+11+11+11+11+11+11+11+1+1+1+1+1+1+1+1+1+1)+chr(11+11+11+1+1+1+1+1+1+1+1))
+
+function decrypt() {
+  let converted = document.getElementById("pyf").value.replace(/\s/g, "");
+  if (converted.slice(0, 5) !== "exec(" || converted.slice(-1) !== ")") {
+    document.getElementById("converted").value = "Invalid input!";
+    return;
+  }
+
+  let unconverted = "";
+  let converted_list = converted.slice(5, -1).split(")+chr(");
+
+  // remove chr( from first element and ) from last element
+  converted_list[0] = converted_list[0].slice(4);
+  converted_list[converted_list.length - 1] = converted_list[
+    converted_list.length - 1
+  ].slice(0, -1);
+
+  for (let i = 0; i < converted_list.length; i++) {
+    unconverted += String.fromCharCode(f_to_num(converted_list[i]));
+  }
+
+  document.getElementById("converted").value = unconverted;
 }
 
 function copy() {

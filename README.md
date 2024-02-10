@@ -2,14 +2,22 @@
 
 ## Description 📖
 
-This is a simple website to convert Python code to unreadable PyF code. PyF is python encrypted, but it is unreadable. This is a fun project to make your Python code unreadable.
+This is a simple website to convert Python code to unreadable PyF code. PyF is python encrypted, but it is unreadable. This is a fun project to make your Python code unreadable. It was made using raw HTML, Tailwind CSS, and JavaScript. There is also a decryptor to convert PyF code back to Python code.
 
-## How to use 🛠️
+## How to convert Python code to PyF code 🔄
 
 1. Go to the website [PyF Converter](https://pyf-converter.vercel.app/)
 2. Write your Python code in the top box
-3. Click the "Convert" button
+3. Click the "Encrypt" button
 4. Copy the PyF code from the bottom box
+
+## How to convert PyF code to Python code 🔄
+
+1. Go to the website [PyF Converter](https://pyf-converter.vercel.app/)
+2. Click on the "Click here to decrypt" button
+3. Write your PyF code in the top box
+4. Click the "Decrypt" button
+5. Copy the Python code from the bottom box
 
 ## Example 📝
 

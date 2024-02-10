@@ -3,27 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PyF Converter | Encrypt</title>
+    <title>PyF Converter | Decrypt</title>
     <script src="styles.js"></script>
     <script src="index.js"></script>
   </head>
   <body class="items-center flex flex-col">
     <div class="container px-2 sm:px-4 md:px-auto flex flex-col flex-1">
-      <h1 class="text-4xl text-center mt-8 text-green-500">PyF Converter | Encrypt</h1>
+      <h1 class="text-4xl text-center mt-8 text-red-500">PyF Converter | Decrypt</h1>
       <p class="text-center mt-3">
-        Enter your Python code below to convert it to PyF code
+        Enter your PyF code below to convert it to Python code
       </p>
-      <a href="decrypt.html" class="text-center text-blue-500 hover:underline">Click here to decrypt</a>
-      <p class="mt-5">Put your python code here:</p>
+      <a href="index.html" class="text-center text-blue-500 hover:underline">Click here to encrypt</a>
+      <p class="mt-5">Put your PyF code here:</p>
       <textarea
         name="unconverted code"
-        id="unconverted"
+        id="pyf"
         cols="30"
         rows="10"
         class="w-full mt-5 border-2 border-gray-300 p-2"
       ></textarea>
-      <button class="bg-green-500 hover:bg-green-700 transition ease-in-out text-white px-4 py-2 mt-5" onclick="encrypt()">Encrypt</button>
-      <p class="mt-5">Converted PyF code:</p>
+      <button class="bg-red-500 hover:bg-red-700 transition ease-in-out text-white px-4 py-2 mt-5" onclick="decrypt()">Decrypt</button>
+      <p class="mt-5">Converted python code:</p>
       <textarea
         name="converted code"
         id="converted"
@@ -32,7 +32,7 @@
         readonly
         class="w-full mt-5 border-2 border-gray-300 p-2"
       ></textarea>
-      <button class="bg-green-500 hover:bg-green-700 transition ease-in-out text-white px-4 py-2 mt-5" id="c" onclick="copy()">Copy</button>
+      <button class="bg-red-500 hover:bg-red-700 transition ease-in-out text-white px-4 py-2 mt-5" id="c" onclick="copy()">Copy</button>
     </div>
     <div class="mt-4 flex items-center justify-center">
       <a href="https://www.github.com/p55d2k/pyf-converter" target="_blank">
